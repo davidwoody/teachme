@@ -37,6 +37,7 @@ Template.list.events({
         console.log(listNumber);
         console.log(theArray);
         Meteor.call('createQuestion', question, theArray, null, listNumber);
+        $("#addQuestionForm")[0].reset();
     }
 
 }); //events
