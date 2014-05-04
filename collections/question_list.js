@@ -11,7 +11,8 @@ Meteor.methods({
 
     var list = {
       name: listName,
-      number: numToUse
+      number: numToUse,
+      userId: this.userId
     };
 
     return QuestionsList.insert(list);
