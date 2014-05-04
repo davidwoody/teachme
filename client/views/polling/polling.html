@@ -18,17 +18,11 @@
   <br>
   <br>
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2 text-center">
       
-<!--       {{#if multipleChoice}}  
-      <h4>A) Current question goes here</h4>
-      <h4>B) Current question goes here</h4>
-      <h4>C) Current question goes here</h4>
-      <h4>D) Current question goes here</h4>
-      {{else}}
-      <h4>Current question goes here</h4>
-      {{/if}}
- -->
+      <h4>Yes: {{responsesYes}}</h4>
+      <h4>No: {{responsesNo}}</h4>
+
     </div>
   </div>
   <br>
@@ -52,7 +46,7 @@
   <br>
   <div class="row">
     <div class="col-md-12 text-center">
-      <button class="btn btn-default btn-sm">force results</button>
+      <button class="btn btn-default btn-sm" id="endPollingBtn">end polling</button>
     </div>
   </div>
       
