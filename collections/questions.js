@@ -1,24 +1,24 @@
 Questions = new Meteor.Collection('questions');
 
 Meteor.methods({
-  // this is what the object should look like
-  // obj = {
-  //   listNumber: number, 
-  //   question: "string",
-  //   answer: true/false
-  //   donePolling: true/false
-  // }
-  createQuestion: function (string, answer, listNumber) {
-    var questObj = {};
+    // this is what the object should look like
+    // obj = {
+    //   listNumber: number, 
+    //   question: "string",
+    //   answer: true/false
+    //   donePolling: true/false
+    // }
+    createQuestion: function (questionText, answerOptions, correctAnswer, listNumber) {
+        var questionObj = {};
 
-    questObj.question = string;
-    questObj.listNumber = listNumber;
-    questObj.answer = answer;
-    questObj.donePolling = false;
+        questionObj.question = questionText;
+        questionObj.listNumber = listNumber;
+        questionObj.answerOptions = answerOptions;
+        questionObj.correctAnswer = correctAnswer;
+        questionObj.donePolling = false;
 
-
-    return Questions.insert(questObj);
-  }, //createQuestionsList
+        return Questions.insert(questionObj);
+    }, //createQuestionsList
 }); //methods
 
 
