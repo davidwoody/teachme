@@ -1,86 +1,59 @@
 <template name="polling">
 
-{{>navbar}}
+    {{>navbar}}
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Join now: <small>{{number}}</small></h1>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h3>{{theQuestion.question}}</h3>
-    </div>
-  </div>
-
-  <!-- <br>
-  <br> -->
-  
-  <br>
-  <br>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{yesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{yesPercent}}%;">
-                    <span class="sr-only">{{yesPercent}}% Yes</span>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Join now: <small>{{number}}</small></h1>
             </div>
-            <!-- progress -->
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <div>{{yesPercent}}% Yes</div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{noPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{noPercent}}%;">
-                    <span class="sr-only">{{noPercent}}% No</span>
-                </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>{{theQuestion.question}}</h3>
             </div>
-            <!-- progress -->
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <div>{{noPercent}}% No</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <div><br /><br /></div>
-        </div>
-    </div>
-    <!--
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="progress">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-          <span class="sr-only">60% Complete</span>
-        </div>
-      </div>
-    </div>
-  </div>-->
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <div>({{responseCount}} responses)</div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <button class="btn btn-default btn-sm" id="endPollingBtn">end polling</button>
-    </div>
-  </div>
-      
 
-</div>
-<!-- continer -->
+        <!-- <br>
+        <br> -->
+
+        <br>
+        <br>
+        {{#each answerOptions}}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{this.responsePercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{this.responsePercent}}%;">
+                        <span class="sr-only">{{this.responsePercent}}% {{this.answerText}}</span>
+                    </div>
+                </div>
+                <!-- progress -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div>{{this.responsePercent}}% {{this.answerText}}</div>
+            </div>
+        </div>
+        <br>
+        {{else}}
+        {{/each}}
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div>({{responseCount}} responses)</div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-default btn-sm" id="endPollingBtn">end polling</button>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- continer -->
 
 </template>
