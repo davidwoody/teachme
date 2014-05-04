@@ -44,6 +44,9 @@ Template.polling.events({
   'click #endPollingBtn': function(e){
     e.preventDefault();
 
+    var listNumber = Router.current().params.listNumber;
+    Meteor.call('updateCurrentQuestion', listNumber, null);
 
+    Router.go('list', { listNumber: listNumber });
   }, //
 });
