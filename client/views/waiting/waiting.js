@@ -1,4 +1,4 @@
-Template.dashboard.helpers({
+Template.waiting.helpers({
     classNumber: function () {
         return Router.current();
     }
