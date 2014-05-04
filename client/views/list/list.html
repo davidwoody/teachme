@@ -1,56 +1,67 @@
 <template name="list">
     {{>navbar}}
-    <div class="container">
-        <div class="col-md-5">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
             <div class="row">
                 <div class="col-md-8">
-                    <h3>{{listName}}</h3>
+                    <h2>{{listName}}</h2>
                 </div>
                 <div class="col-md-4">
                     <h2> <small>{{number}}</small></h2>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>List of questions for this class:</h3>
-                </div>
-            </div>
+             <hr>
             <!--foreach question in questions-->
             {{#each questions}}
                 {{>question}}
             {{/each}}
         </div>
         <div class="col-md-6">
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <input id="questionInput" class="form-control input-lg" type="text" placeholder="Type your question here">
-            <div class="row">&nbsp;</div>
-            <!-- <button type="button" id="buttonYes" data-answer="yes" class="btn btn-success btn-lg add-question">Yes</button>
-            <button type="button" id="buttonNo" data-answer="no" class="btn btn-danger btn-lg add-question">No</button> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-primary">Add Question</h2>
+                </div>
+            </div>
+            <hr>
 
 
-            <div class="form-group">
-              <label class="hidden">Question1</label>
-              <input type="text" class="form-control required" id="question1" placeholder="A) Enter a question option">
-            </div> 
-            <div class="form-group">
-              <label class="hidden">Question2</label>
-              <input type="text" class="form-control required" id="question2" placeholder="B) Enter a question option">
-            </div>
-            <div class="form-group">
-              <label class="hidden">Question3</label>
-              <input type="text" class="form-control required" id="question3" placeholder="C) Enter a question option">
-            </div>
-            <div class="form-group">
-              <label class="hidden">Question4</label>
-              <input type="text" class="form-control required" id="question4" placeholder="D) Enter a question option">
-            </div>
+<!--             <div class="row">&nbsp;</div>
+ -->        
+            <form id="addQuestionForm">
+                <div class="form-group has-success">
+                  <label class="hidden">Question1</label>
+                  <input type="text" class="form-control required input-lg" id="questionInput" placeholder="Type your question here">
+                </div>
+                <span class="help-block"> 
+                    <span class="text-muted">Enter your answers below...
+                    </span>
+                </span> 
 
-            <button type="button" id="createQuestionBtn" data-answer="no" class="btn btn-primary btn-block btn-lg add-question">Create Question and Answers</button>
-            <button type="button" id="createQuestionTrueFalseBtn" data-answer="no" class="btn btn-default btn-block btn-lg add-question">Create Question with True/False Answer</button>
+
+                <div class="form-group">
+                  <label class="hidden">Answer1</label>
+                  <input type="text" class="form-control required" id="answer1" placeholder="A) Enter a question option">
+                </div> 
+                <div class="form-group">
+                  <label class="hidden">Answer2</label>
+                  <input type="text" class="form-control required" id="answer2" placeholder="B) Enter a question option">
+                </div>
+                <div class="form-group">
+                  <label class="hidden">Answer3</label>
+                  <input type="text" class="form-control required" id="answer3" placeholder="C) Enter a question option">
+                </div>
+                <div class="form-group">
+                  <label class="hidden">Answer4</label>
+                  <input type="text" class="form-control required" id="answer4" placeholder="D) Enter a question option">
+                </div>
+
+                <button type="submit" id="createQuestionBtn" data-answer="no" class="btn btn-primary btn-block btn-lg add-question">Create Question and Answers</button>
+                
+
+            </form>
 
         </div>
     </div>
+</div>
 </template>
