@@ -56,7 +56,7 @@ Template.polling.helpers({
         var count = 0;
 
         for (var i = 0; i < precArray.length; i++) {
-            if(precArray[i].state.classNumber === Router.current().params.listNumber && !precArray[i].userId){
+            if (precArray[i].state && precArray[i].state.classNumber === Router.current().params.listNumber && !precArray[i].userId) {
                 count++;
             }
         };

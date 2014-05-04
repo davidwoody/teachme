@@ -20,6 +20,6 @@ Template.landing.events({
 Presence.state = function() {
   return {
     online: true,
-    classNumber: Router.current().params.listNumber
+    classNumber: Router.current().params && Router.current().params.listNumber
   };
 };
