@@ -16,3 +16,10 @@ Template.landing.events({
         //inputField.val("");
     }, //submit
 });
+
+Presence.state = function() {
+  return {
+    online: true,
+    classNumber: Router.current().params.listNumber
+  };
+};

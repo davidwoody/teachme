@@ -47,6 +47,19 @@ Template.polling.helpers({
     responseCount: function () {
         var questionId = Router.current().params.questionId;
         return Responses.find({ questionId: questionId }).count();
+    },
+
+    userCount: function(){
+        var precArray = Presences.find().fetch();
+        var count = 0;
+
+        for (var i = 0; i < precArray.length; i++) {
+            if(precArray[i].state.classNumber === Router.current().params.listNumber){
+                count++;
+            }
+        };
+
+        return count;
     }
 
 });
