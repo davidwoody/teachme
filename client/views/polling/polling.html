@@ -27,6 +27,36 @@
   </div>
   <br>
   <br>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{yesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{yesPercent}}%;">
+                    <span class="sr-only">{{yesPercent}}% Yes</span>
+                </div>
+            </div>
+            <!-- progress -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div>{{yesPercent}}% Yes</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{noPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{noPercent}}%;">
+                    <span class="sr-only">{{noPercent}}% No</span>
+                </div>
+            </div>
+            <!-- progress -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div>{{noPercent}}% No</div>
+        </div>
+    </div>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="progress">
@@ -39,7 +69,7 @@
   </div>
   <div class="row">
     <div class="col-md-12 text-center">
-      <div>60% Responded</div>
+      <div>60% Responded ({{responseCount}} responses)</div>
     </div>
   </div>
   <br>
