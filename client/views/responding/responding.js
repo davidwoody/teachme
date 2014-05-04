@@ -6,7 +6,9 @@ Template.responding.helpers({
           var questionId = questionList[0].currentQuestion;
           var question = Questions.find({ _id: questionId }).fetch();
           if (question && question.length > 0) {
-            $('.add-response').prop('disabled', false).removeClass('btn-primary').addClass('btn-default');
+            $('.add-response').prop('disabled', false);
+            // $('.add-response').prop('disabled', false).removeClass('btn-primary').addClass('btn-default');
+
             // $("#answerYes").addClass('btn-success');
             // $("#answerNo").addClass('btn-danger');
             return question[0];
@@ -26,7 +28,19 @@ Template.responding.helpers({
             // $('.add-response').prop('disabled', false).removeClass('btn-default');
             // $("#answerYes").addClass('btn-success');
             // $("#answerNo").addClass('btn-danger');
-            return question[0].answerOptions;
+            var answerOptionsArray = question[0].answerOptions;
+            var specialClassArray = ["btn-success", "btn-danger", "btn-warning", "btn-info"  ];
+            var newArray = [];
+            for (var i = 0; i < answerOptionsArray.length; i++) {
+              
+              var obj = {
+                answerOption: answerOptionsArray[i],
+                specialClass: specialClassArray[i]
+              };
+
+              newArray.push(obj);
+            };
+            return newArray;
           }
       }
       // return null;
@@ -63,8 +77,8 @@ Template.responding.events({
     {
       Meteor.call('createResponse', questionList.currentQuestion, button.data('answer'));
     }
-    $(button).removeClass("btn-default").addClass('btn-primary');
-    // $(".add-response").not(button).removeClass("btn-success").removeClass("btn-danger").addClass('btn-default');
+    $(button).removeClass("btn-default btn-danger btn-success btn-warning").addClass('btn-primary');
+    $(".add-response").not(button).removeClass("btn-success btn-danger btn-success btn-warning").addClass('btn-default');
     $('.add-response').prop('disabled', true);
   }
 }); //events
