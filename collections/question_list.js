@@ -19,6 +19,13 @@ Meteor.methods({
 
     return QuestionsList.insert(list);
   }, //createQuestionsList
+
+  updateCurrentQuestion: function(listNumber, value){
+    var num = parseInt(listNumber, 10);
+    var questionList = QuestionsList.findOne({number: num});
+
+    return QuestionsList.update({_id: questionList._id}, {$set: {currentQuestion: value}});
+  }
 }); //methods
 
 
