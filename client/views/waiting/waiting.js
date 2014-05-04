@@ -14,14 +14,3 @@ Template.waiting.helpers({
 //        inputField.val("");
 //    }, //submit
 //});
-
-//$(function () {
-//  if (Meteor.isClient) {
-//    var questionListQuery = QuestionsList.find({ number: Router.current().params.listNumber });
-//    var handle = query.observeChanges({
-//      change: function (id, fields) {
-//        debugger;
-//      }
-//    });
-//  }
-//});

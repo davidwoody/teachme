@@ -22,25 +22,22 @@ Meteor.methods({
 }); //methods
 
 
-
-//$(function () {
-//  Deps.autorun(function () {
-//    if (Router.current() && Router.current().params && Router.current().params.listNumber) {
-//      var questionList = QuestionsList.findOne({ number: Router.current().params.listNumber });
-//      if (questionList) {
-//        if (questionList.currentQuestion) {
-//          if (Router.current().path.indexOf('/waiting') > -1) {
-//            Router.go('responding', { listNumber: Router.current().params.listNumber });
-//          }
-//        }
-//        else {
-//          if (Router.current().path.indexOf('/responding') > -1) {
-//            Router.go('waiting', { listNumber: Router.current().params.listNumber });
-//          }
-//        }
-//      }
-//    }
-
-//  }
-//  );
-//});
+if (Meteor.isClient) {
+  Deps.autorun(function () {
+    if (Router.current() && Router.current().params && Router.current().params.listNumber) {
+      var questionList = QuestionsList.find({ number: parseInt(Router.current().params.listNumber) }).fetch();
+      if (questionList && questionList.length > 0) {
+        if (questionList[0].currentQuestion) {
+          if (Router.current().path.indexOf('/waiting') > -1) {
+            Router.go('responding', { listNumber: Router.current().params.listNumber });
+          }
+        }
+        else {
+          if (Router.current().path.indexOf('/responding') > -1) {
+            Router.go('waiting', { listNumber: Router.current().params.listNumber });
+          }
+        }
+      }
+    }
+  });
+}
