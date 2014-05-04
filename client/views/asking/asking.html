@@ -1,5 +1,7 @@
 <template name="asking">
 
+{{>navbar}}
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -9,7 +11,7 @@
   <hr>
   <div class="row">
     <div class="col-md-12 text-center">
-      <h3>Current question goes here</h3>
+      <h3>{{theQuestion.question}}</h3>
     </div>
   </div>
   <br>
