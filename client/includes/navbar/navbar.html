@@ -15,7 +15,12 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{pathFor 'presenter'}}">Presenter Portal</a></li>
+        <li><a href="{{pathFor 'presenter'}}">Presenter Portal</a>
+        </li>
+        {{#if isUser}}
+        <li><a href="{{pathFor 'signOut'}}">Sign Out</a>
+        </li>
+        {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
 
