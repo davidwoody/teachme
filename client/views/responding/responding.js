@@ -78,7 +78,7 @@ Template.responding.events({
       Meteor.call('createResponse', questionList.currentQuestion, button.data('answer'));
     }
     $(button).removeClass("btn-default btn-danger btn-success btn-warning").addClass('btn-primary');
-    $(".add-response").not(button).removeClass("btn-success btn-danger btn-success btn-warning").addClass('btn-default');
+    $(".add-response").not(button).removeClass("btn-info btn-danger btn-success btn-warning").addClass('btn-default');
     $('.add-response').prop('disabled', true);
   }
 }); //events
