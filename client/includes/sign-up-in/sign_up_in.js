@@ -4,7 +4,24 @@ Template.signUpIn.events({
 
     var emailVal = $('#emailSignUp').val();
     var passwordVal = $('#passwordSignUp').val();
+    var emailGroupEl = $('#emailGroup');
+    var passwordGroupEl = $('#passwordGroup');
 
+    if (!emailVal)
+    {
+        emailGroupEl.addClass('has-error')
+    }
+    else
+    {
+        emailGroupEl.removeClass('has-error');
+    }
+
+    if (!passwordVal) {
+        passwordGroupEl.addClass('has-error')
+    }
+    else {
+        passwordGroupEl.removeClass('has-error');
+    }
 
     // TODO: try to create user,
     // use callback function to sign in if user already exists
@@ -21,6 +38,7 @@ Template.signUpIn.events({
         Meteor.loginWithPassword(emailVal, passwordVal, function (error) {
           if(error){
             console.log(error);
+            passwordGroupEl.addClass('has-error');
           } else{
             Router.go('dashboard');
           }
