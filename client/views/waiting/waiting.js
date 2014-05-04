@@ -1,6 +1,6 @@
 Template.waiting.helpers({
     classNumber: function () {
-        return Router.current();
+        return Router.current().params.number;
     }
 });
 
