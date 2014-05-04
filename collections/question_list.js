@@ -2,11 +2,12 @@ QuestionsList = new Meteor.Collection('questionsList');
 
 Meteor.methods({
   createQuestionsList: function (listName) {
-    var num = QuestionsList.find().fetch().length;
-    var numToUse = num + 1001;
+    var num = QuestionsList.findOne({}, { sort: { number: -1 } });
+    var numToUse = 1001; // default value if there are no questions
 
-    if(!num){
-      numToUse = 1001;
+    if (num)
+    {
+      numToUse = num.number + 1;
     }
 
     var list = {
