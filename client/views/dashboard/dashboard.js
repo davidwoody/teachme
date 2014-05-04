@@ -1,15 +1,17 @@
 Template.dashboard.helpers({
-  list: function(){
-    return QuestionsList.find({userId: Meteor.userId()});
-  }
+    list: function () {
+        return QuestionsList.find({ userId: Meteor.userId() });
+    }
 });
 
 Template.dashboard.events({
     'submit #createNewList': function (e) {
         e.preventDefault();
-    var name = $("#listNameInput").val();
+        var inputField = $("#listNameInput");
+        var name = inputField.val();
 
-    Meteor.call('createQuestionsList', name);
+        Meteor.call('createQuestionsList', name);
+        inputField.val("");
 
-  }, //click
+    }, //click
 });
