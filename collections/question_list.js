@@ -6,7 +6,7 @@ Meteor.methods({
     var numToUse = num + 1001;
 
     if(!num){
-      numToUse = 1000;
+      numToUse = 1001;
     }
 
     var list = {
