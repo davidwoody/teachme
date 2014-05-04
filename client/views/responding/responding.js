@@ -1,7 +1,7 @@
 Template.responding.helpers({
     theQuestion: function () {
-        var listNumber = Router.current().params.listNumber;
-        var questionList = QuestionsList.find({ listNumber: listNumber }).fetch();
+        var listNumber = parseInt(Router.current().params.listNumber, 10);
+        var questionList = QuestionsList.find({ number: listNumber }).fetch();
         if (questionList && questionList.length > 0) {
             var questionId = questionList[0].currentQuestion;
             var question = Questions.find({ _id: questionId }).fetch();
