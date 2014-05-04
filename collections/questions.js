@@ -5,11 +5,20 @@ Meteor.methods({
   // obj = {
   //   questionListId: "hlkjklh", 
   //   question: "string",
-  //   answers: null, [“strings”, “strings”, “strings”, “string”]
-  //   answerType: “multiple”
+  //   answer: true/false
+  //   polling: true/false
+  //   donePolling: true/false
   // }
-  createQuestion: function (obj) {
-    return Questions.insert(obj);
+  createQuestion: function (string, bool) {
+    var questObj = {};
+
+    questObj.question = string;
+    questObj.answer = bool;
+    questObj.polling = false;
+    questObj.donePolling = false;
+
+
+    return Questions.insert(questObj);
   }, //createQuestionsList
 }); //methods
 
