@@ -7,5 +7,32 @@ Template.polling.helpers({
   },
   number: function(){
     return Router.current().params.listNumber;
+  },
+  yesPercent: function()
+  {
+    var questionId = Router.current().params.questionId;
+    var allResponses = Responses.find({questionId: questionId}).count();
+    var yesResponses = Responses.find({ questionId: questionId, response: 'yes' }).count();
+    if (allResponses == 0)
+    {
+      return 0;
+    }
+
+    return Math.round((yesResponses / allResponses) * 100);
+  },
+  noPercent: function () {
+    var questionId = Router.current().params.questionId;
+    var allResponses = Responses.find({ questionId: questionId }).count();
+    var noResponses = Responses.find({ questionId: questionId, response: 'no' }).count();
+    if (allResponses == 0) {
+      return 0;
+    }
+
+    return Math.round((noResponses / allResponses) * 100);
+  },
+  responseCount: function()
+  {
+    var questionId = Router.current().params.questionId;
+    return Responses.find({ questionId: questionId }).count();
   }
 });

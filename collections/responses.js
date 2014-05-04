@@ -6,7 +6,12 @@ Meteor.methods({
   //   questionId: "_id", 
   //   response: "string",
   // }
-  createResponse: function (obj) {
-    return Responses.insert(obj);
+  createResponse: function (questionId, response) {
+    var responseObj = {};
+
+    responseObj.questionId = questionId;
+    responseObj.response = response;
+
+    return Responses.insert(responseObj);
   }, //createQuestionsList
 }); //methods
