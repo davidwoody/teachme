@@ -3,13 +3,23 @@ Questions = new Meteor.Collection('questions');
 Meteor.methods({
   // this is what the object should look like
   // obj = {
-  //   questionListId: "hlkjklh", 
+  //   questionListNumber: number, 
   //   question: "string",
-  //   answers: null, [“strings”, “strings”, “strings”, “string”]
-  //   answerType: “multiple”
+  //   answer: true/false
+  //   polling: true/false
+  //   donePolling: true/false
   // }
-  createQuestion: function (obj) {
-    return Questions.insert(obj);
+  createQuestion: function (string, bool, listNumber) {
+    var questObj = {};
+
+    questObj.question = string;
+    questObj.listNumber = listNumber;
+    questObj.answer = bool;
+    questObj.polling = false;
+    questObj.donePolling = false;
+
+
+    return Questions.insert(questObj);
   }, //createQuestionsList
 }); //methods
 
