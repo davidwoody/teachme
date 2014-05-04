@@ -13,7 +13,8 @@ Meteor.methods({
     var list = {
       name: listName,
       number: numToUse,
-      userId: this.userId
+      userId: this.userId,
+      currentQuestion: null
     };
 
     return QuestionsList.insert(list);
@@ -21,3 +22,25 @@ Meteor.methods({
 }); //methods
 
 
+
+//$(function () {
+//  Deps.autorun(function () {
+//    if (Router.current() && Router.current().params && Router.current().params.listNumber) {
+//      var questionList = QuestionsList.findOne({ number: Router.current().params.listNumber });
+//      if (questionList) {
+//        if (questionList.currentQuestion) {
+//          if (Router.current().path.indexOf('/waiting') > -1) {
+//            Router.go('responding', { listNumber: Router.current().params.listNumber });
+//          }
+//        }
+//        else {
+//          if (Router.current().path.indexOf('/responding') > -1) {
+//            Router.go('waiting', { listNumber: Router.current().params.listNumber });
+//          }
+//        }
+//      }
+//    }
+
+//  }
+//  );
+//});
