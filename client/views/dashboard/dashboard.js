@@ -12,6 +12,5 @@ Template.dashboard.events({
 
         Meteor.call('createQuestionsList', name);
         inputField.val("");
-
-    }, //click
+    }, //submit
 });
