@@ -17,6 +17,8 @@ Template.asking.events({
     var listNumber = Router.current().params.listNumber;
     var questionId = Router.current().params.questionId;
     Meteor.call('updateCurrentQuestion', listNumber, questionId);
+
+    Router.go('polling', listNumber, questionId);
   }, //click
 
 });
