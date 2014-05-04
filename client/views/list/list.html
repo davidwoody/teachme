@@ -1,5 +1,22 @@
 <template name="list">
+    {{>navbar}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>List Name Goes Here:</h1>
+            </div>
+            <h2>
+                1000
+            </h2>
+            <div class="col-md-6">
 
-<h1>hi list</h1>
-
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="col-md-5">List of questions for this class:</h3>
+            <button type="button" class="btn btn-warning btn-lg">Add</button>
+        </div>
+        <!--foreach question in questions-->
+        {{>question}}
+    </div>
 </template>
