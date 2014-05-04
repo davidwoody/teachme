@@ -23,6 +23,7 @@ Template.polling.helpers({
 
         for (var i = 0; i < options.length; i++) {
             var optionResponses = Responses.find({ questionId: questionId, response: options[i] }).count();
+            var specialClassArray = ["progress-bar-success", "progress-bar-danger", "progress-bar-warning", "progress-bar-info"];
 
             var percent;
             if (allResponsesCount === 0) {
@@ -34,6 +35,7 @@ Template.polling.helpers({
 
             var optionObject = {
                 index: i,
+                specialClass: specialClassArray[i],
                 responsePercent: percent,
                 answerText: options[i]
             };
