@@ -1,4 +1,6 @@
 Template.polling.helpers({
+
+
   theQuestion: function(){
     var questionId = Router.current().params.questionId;
     // WHY CAN I NOT ACCESS THE PROPERIES RETURNED?
@@ -8,7 +10,23 @@ Template.polling.helpers({
   number: function(){
     return Router.current().params.listNumber;
   },
-  yesPercent: function()
+// <<<<<<< HEAD
+
+//   responsesYes: function(){
+//     var questionId =  Router.current().params.questionId;
+//     var responses = Responses.find({questionId: questionId}).fetch().length;
+//     var yesResponses = Responses.find({questionId: questionId, response: "yes"}).fetch().length;
+//     return yesResponses / responses ;
+//   }, //responseYes
+
+//   responsesNo: function(){
+//     var questionId =  Router.current().params.questionId;
+//     var responses = Responses.find({questionId: questionId}).fetch().length;
+//     var noResponses = Responses.find({questionId: questionId, response: "no"}).fetch().length;
+//     return noResponses / responses ;
+//   }, //responseNo
+
+yesPercent: function()
   {
     var questionId = Router.current().params.questionId;
     var allResponses = Responses.find({questionId: questionId}).count();
@@ -35,4 +53,13 @@ Template.polling.helpers({
     var questionId = Router.current().params.questionId;
     return Responses.find({ questionId: questionId }).count();
   }
+
+});
+
+Template.polling.events({
+  'click #endPollingBtn': function(e){
+    e.preventDefault();
+
+
+  }, //
 });

@@ -4,8 +4,9 @@ Meteor.methods({
   // this is what the object should look like
   // obj = {
   //   questionId: "_id", 
-  //   response: "string",
+  //   response: "yes/no",
   // }
+
   createResponse: function (questionId, response) {
     var responseObj = {};
 
@@ -13,5 +14,6 @@ Meteor.methods({
     responseObj.response = response;
 
     return Responses.insert(responseObj);
+
   }, //createQuestionsList
 }); //methods

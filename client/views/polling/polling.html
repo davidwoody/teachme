@@ -15,28 +15,15 @@
     </div>
   </div>
 
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      
-<!--       {{#if multipleChoice}}  
-      <h4>A) Current question goes here</h4>
-      <h4>B) Current question goes here</h4>
-      <h4>C) Current question goes here</h4>
-      <h4>D) Current question goes here</h4>
-      {{else}}
-      <h4>Current question goes here</h4>
-      {{/if}}
- -->
-    </div>
-  </div>
+  <!-- <br>
+  <br> -->
+  
   <br>
   <br>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="{{yesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{yesPercent}}%;">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{yesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{yesPercent}}%;">
                     <span class="sr-only">{{yesPercent}}% Yes</span>
                 </div>
             </div>
@@ -48,10 +35,11 @@
             <div>{{yesPercent}}% Yes</div>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="{{noPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{noPercent}}%;">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{noPercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{noPercent}}%;">
                     <span class="sr-only">{{noPercent}}% No</span>
                 </div>
             </div>
@@ -66,7 +54,7 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
           <span class="sr-only">60% Complete</span>
         </div>
       </div>
@@ -82,7 +70,7 @@
   <br>
   <div class="row">
     <div class="col-md-12 text-center">
-      <button class="btn btn-default btn-sm">force results</button>
+      <button class="btn btn-default btn-sm" id="endPollingBtn">end polling</button>
     </div>
   </div>
       
