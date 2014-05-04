@@ -1,5 +1,52 @@
 <template name="dashboard">
 
-<h1>hi dashboard</h1>
+{{>navbar}}
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Dashboard <small>Check out your lists below</small></h1>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Your Question Lists</h4>
+    <hr>
+
+    {{>questionsList}}
+<!--     {{#each questionLists}}
+      {{>questionList}}
+    {{/each}}
+ -->
+  </div>
+  <div class="col-md-6">
+    <div class="pull-right">
+      <form id="createNewList" class="form-inline">
+        <div class="form-group">
+          <label>List Name</label>
+          <input type="text" class="form-control required" id="listNameInput" placeholder="Enter a name">
+          </div>
+
+        <button type="submit" class="btn btn-primary" id="listNameSubmitBtn">
+          Create List
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- col-md-6 -->
+
+
+</div>
+<!-- row form -->
+
+
+
+</div>
+<!-- container -->
+
+
 
 </template>
