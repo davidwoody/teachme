@@ -4,6 +4,14 @@ Template.list.helpers({
     },
     questions: function () {
         return Questions.find({ listNumber: Router.current().params.listNumber });
+    },
+    listName: function(){
+        var listNumber = parseInt(Router.current().params.listNumber, 10);
+        var list = QuestionsList.find({number: listNumber}).fetch();
+
+        if(list && list.length > 0){
+            return list[0].name;
+        }
     }
 });
 
