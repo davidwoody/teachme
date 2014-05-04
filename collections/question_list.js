@@ -22,10 +22,10 @@ Meteor.methods({
 
   updateCurrentQuestion: function(listNumber, value){
     var num = parseInt(listNumber, 10);
-    var questionList = QuestionsList.findOne({number: num});
+    var list = QuestionsList.findOne({number: num});
 
-    return QuestionsList.update({_id: questionList._id}, {$set: {currentQuestion: value}});
-  }
+    return QuestionsList.update({_id: list._id}, {$set: {currentQuestion: value}});
+  }, //current question
 }); //methods
 
 
