@@ -51,7 +51,7 @@ Template.responding.helpers({
                 // $("#answerYes").addClass('btn-success');
                 // $("#answerNo").addClass('btn-danger');
                 var answerOptionsArray = question[0].answerOptions;
-                answerOptionsArray = shuffleArray(answerOptionsArray);
+                //answerOptionsArray = shuffleArray(answerOptionsArray);
                 var specialClassArray = ["btn-success", "btn-danger", "btn-warning", "btn-info"];
                 var newArray = [];
                 for (var i = 0; i < answerOptionsArray.length; i++) {
