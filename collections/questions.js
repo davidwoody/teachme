@@ -6,7 +6,6 @@ Meteor.methods({
   //   listNumber: number, 
   //   question: "string",
   //   answer: true/false
-  //   polling: true/false
   //   donePolling: true/false
   // }
   createQuestion: function (string, answer, listNumber) {
@@ -15,7 +14,6 @@ Meteor.methods({
     questObj.question = string;
     questObj.listNumber = listNumber;
     questObj.answer = answer;
-    questObj.polling = false;
     questObj.donePolling = false;
 
 
