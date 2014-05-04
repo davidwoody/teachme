@@ -1,5 +1,13 @@
 Questions = new Meteor.Collection('questions');
 
+var removeEmptyFromArray = function (stringArray) {
+    for (var i = stringArray.length; i--;) {
+        if (stringArray[i] === null || stringArray[i].trim() === "") {
+            stringArray.splice(i, 1);
+        }
+    }
+}
+
 Meteor.methods({
     // this is what the object should look like
     // obj = {
@@ -10,6 +18,8 @@ Meteor.methods({
     // }
     createQuestion: function (questionText, answerOptions, correctAnswer, listNumber) {
         var questionObj = {};
+
+        removeEmptyFromArray(answerOptions);
 
         questionObj.question = questionText;
         questionObj.listNumber = listNumber;
