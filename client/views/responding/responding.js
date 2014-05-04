@@ -30,14 +30,34 @@ Template.responding.helpers({
           }
       }
       // return null;
-    }
+    },
+    // answerIndex: function(){
+    //   var answer = this;
+
+    //   var listNumber = parseInt(Router.current().params.listNumber, 10);
+    //   var questionList = QuestionsList.find({ number: listNumber }).fetch();
+    //   if (questionList && questionList.length > 0) {
+    //       var questionId = questionList[0].currentQuestion;
+    //       var question = Questions.find({ _id: questionId }).fetch();
+    //       if (question && question.length > 0) {
+    //         // $('.add-response').prop('disabled', false).removeClass('btn-default');
+    //         // $("#answerYes").addClass('btn-success');
+    //         // $("#answerNo").addClass('btn-danger');
+    //         var theIndex = question[0].answerOptions.indexOf(this);
+    //         console.log(theIndex);
+    //         return theIndex;
+    //       }
+    //   }
+    //   // return null;
+
+    // }, //
 });
 
 Template.responding.events({
   'click .add-response': function (e) {
     e.preventDefault();
     var button = $(e.target);
-    var listNumber = parseInt(Router.current().params.listNumber);
+    var listNumber = parseInt(Router.current().params.listNumber, 10);
     var questionList = QuestionsList.findOne({ number: listNumber });
     if (questionList && questionList.currentQuestion)
     {
