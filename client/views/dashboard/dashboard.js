@@ -5,7 +5,8 @@ Template.dashboard.helpers({
 });
 
 Template.dashboard.events({
-  'click #listNameSubmitBtn': function (e) {
+    'submit #createNewList': function (e) {
+        e.preventDefault();
     var name = $("#listNameInput").val();
 
     Meteor.call('createQuestionsList', name);
