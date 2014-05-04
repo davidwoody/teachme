@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-md-4">
                     <h2>
-                        1000
+                        {{number}}
                     </h2>
                 </div>
             </div>
@@ -19,7 +19,9 @@
                 </div>
             </div>
             <!--foreach question in questions-->
-            {{>question}}
+            {{#each questions}}
+                {{>question}}
+            {{/each}}
         </div>
         <div class="col-md-6">
             <div class="row">&nbsp;</div>
