@@ -1,5 +1,55 @@
 <template name="results">
 
-<h1>Hi results</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Join now: <small>1000</small></h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>Current question goes here</h3>
+      <h3> <small>results</small> </h3>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      {{#if true}}  
+      <h4>A) Current question goes here
+      </h4>
+      <h4>B) Current question goes here
+      </h4>
+      <h4>C) Current question goes here
+      </h4>
+      <h4>D) Current question goes here
+      </h4>
+      {{else}}
+      <h4>Current question goes here
+      </h4>
+      {{/if}}
+    </div>
+    <div class="col-md-2">
+      <h4>A) 20%</h4>
+      <h4>B) 20%</h4>
+      <h4>C) 20%</h4>
+      <h4>D) 20%</h4>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button class="btn btn-primary">Next Question</button>
+    </div>
+  </div>
+      
+
+</div>
+<!-- continer -->
 
 </template>
