@@ -3,7 +3,7 @@ Questions = new Meteor.Collection('questions');
 Meteor.methods({
   // this is what the object should look like
   // obj = {
-  //   questionListNumber: number, 
+  //   listNumber: number, 
   //   question: "string",
   //   answer: true/false
   //   polling: true/false
