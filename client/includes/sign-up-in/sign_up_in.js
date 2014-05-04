@@ -19,7 +19,7 @@ Template.signUpIn.events({
       if(error){
         console.log(error);
         Meteor.loginWithPassword(emailVal, passwordVal, function (error) {
-          if(err){
+          if(error){
             console.log(error);
           } else{
             Router.go('dashboard');
