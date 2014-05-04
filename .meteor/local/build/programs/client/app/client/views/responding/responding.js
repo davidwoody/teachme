@@ -1,4 +1,4 @@
-Template.responding.helpers({
+(function(){Template.responding.helpers({
     theQuestion: function () {
         var listNumber = parseInt(Router.current().params.listNumber, 10);
         var questionList = QuestionsList.find({ number: listNumber }).fetch();
@@ -41,3 +41,5 @@ Template.responding.events({
 //        //inputField.val("");
 //    }, //submit
 //});
+
+})();
