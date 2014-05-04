@@ -4,6 +4,12 @@ Template.waiting.helpers({
     }
 });
 
+Template.waiting.events({
+    'click #ChangeGroupButton': function (e) {
+     Router.go('/');
+    }, //submit
+});
+
 //Template.dashboard.events({
 //    'submit #createNewList': function (e) {
 //        e.preventDefault();
